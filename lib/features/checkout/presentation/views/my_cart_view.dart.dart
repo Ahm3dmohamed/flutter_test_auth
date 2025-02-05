@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_auth/core/font_manager.dart';
 import 'package:flutter_test_auth/core/resources/color_manager.dart';
+import 'package:flutter_test_auth/core/resources/values_manager.dart';
+import 'package:flutter_test_auth/features/checkout/widgets/checkout_button.dart';
 import 'package:flutter_test_auth/features/checkout/widgets/product_image.dart';
 import 'package:flutter_test_auth/features/checkout/widgets/product_info.dart';
 import 'package:flutter_test_auth/features/checkout/widgets/quantity_control.dart';
@@ -48,6 +50,10 @@ class _MyCartViewState extends State<MyCartView> {
             onIncrease: () => _updateQuantity(1),
             onDecrease: () => _updateQuantity(-1),
           ),
+
+          const SizedBox(height: AppSize.s16),
+//  Add a button to checkout
+          CheckoutButton(total: total, size: size),
         ],
       ),
     );
