@@ -44,6 +44,8 @@ abstract class Styles {
       fontFamily: fontFamily,
       fontWeight: FontWeight.w100,
       height: 0);
+
+  static var style18;
 }
 
 

@@ -12,7 +12,7 @@ class ProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(Appmargin.m16),
-      height: size.height * 0.5,
+      height: size.height * 0.46,
       width: size.width * 0.8,
       decoration: BoxDecoration(
         image: const DecorationImage(

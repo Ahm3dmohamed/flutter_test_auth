@@ -52,7 +52,7 @@ class _MyCartViewState extends State<MyCartView> {
           ),
 
           const SizedBox(height: AppSize.s16),
-//  Add a button to checkout
+          //  Add a button to checkout
           CheckoutButton(total: total, size: size),
         ],
       ),

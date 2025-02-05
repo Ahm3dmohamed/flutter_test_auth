@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppPadding {
   static const double p5 = 5.0;
   static const double p8 = 8.0;
@@ -6,6 +8,14 @@ class AppPadding {
   static const double p16 = 16.0;
   static const double p18 = 18.0;
   static const double p20 = 20.0;
+}
+
+class AppQuery {
+  static double width(BuildContext context, double value) =>
+      MediaQuery.of(context).size.width * (value / 100);
+
+  static double height(BuildContext context, double value) =>
+      MediaQuery.of(context).size.height * (value / 100);
 }
 
 class Appmargin {

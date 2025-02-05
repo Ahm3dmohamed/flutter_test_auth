@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_auth/core/font_manager.dart';
+import 'package:flutter_test_auth/core/resources/color_manager.dart';
 import 'package:flutter_test_auth/core/resources/values_manager.dart';
 
 class ProductInfo extends StatelessWidget {
@@ -10,32 +11,42 @@ class ProductInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('Discount ',
-                style: Styles.style20.copyWith(color: Colors.white)),
-            const SizedBox(width: AppSize.s12),
-            Text('\$0', style: Styles.style20.copyWith(color: Colors.white)),
-          ],
-        ),
-        const SizedBox(height: AppSize.s1),
-        Padding(
-          padding: const EdgeInsets.all(AppPadding.p8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('Price: \$$price',
-                  style: Styles.style20.copyWith(color: Colors.white)),
-              const SizedBox(width: AppSize.s12),
-              Text('Total: \$${total.toStringAsFixed(0)}',
-                  style: Styles.style20.copyWith(color: Colors.white)),
-            ],
+    return Container(
+      margin: const EdgeInsets.all(AppPadding.p12),
+      padding: const EdgeInsets.all(AppPadding.p16),
+      decoration: BoxDecoration(
+        color: ColorManager.primaryDark,
+        borderRadius: BorderRadius.circular(AppSize.s12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.6),
+            blurRadius: 6,
+            offset: const Offset(0, 1),
           ),
-        ),
-      ],
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildInfoRow("Discount", "\$0"),
+          const Divider(color: Colors.white54, thickness: 1),
+          _buildInfoRow("Price", "\$$price"),
+          _buildInfoRow("Total", "\$${total.toStringAsFixed(2)}"),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: AppPadding.p8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: Styles.style20.copyWith(color: Colors.white)),
+          Text(value, style: Styles.style20.copyWith(color: Colors.white)),
+        ],
+      ),
     );
   }
 }
