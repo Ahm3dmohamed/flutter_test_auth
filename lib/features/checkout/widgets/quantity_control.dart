@@ -1,6 +1,6 @@
-// ✅ Widget مستقلة لعناصر التحكم في الكمية
 import 'package:flutter/material.dart';
 import 'package:flutter_test_auth/core/font_manager.dart';
+import 'package:flutter_test_auth/core/resources/color_manager.dart';
 
 class QuantityControls extends StatelessWidget {
   const QuantityControls({
@@ -33,7 +33,7 @@ class QuantityControls extends StatelessWidget {
       height: 40,
       width: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: ColorManager.white.withOpacity(0.5),
         borderRadius: BorderRadius.circular(5),
       ),
       child: IconButton(
