@@ -6,6 +6,8 @@ const String svgPath = "assets/svg_images";
 abstract class ImageAssets {
   static const String routeLogo = "$imagePath/splash_logo.png";
   static const String categoryCardImage = "$imagePath/category_card_image.png";
+  static const String payPalLogo = "$imagePath/paypal_logo.png";
+  static const String creditImage = "$imagePath/credit.jpg";
 
   static const String subcategoryCardImage =
       "$imagePath/sub_category_card_image.png";
@@ -16,9 +18,9 @@ abstract class ImageAssets {
   static const String carouselSlider3 = "$imagePath/CarouselSlider3.png";
   static const String brandHomeImage = "$imagePath/brands_section_image.png";
   static const String productImage = "$imagePath/product_image.png";
+  static const String product = "$imagePath/product.jpg";
 
   static const String rate = "$imagePath/rate.png";
-
   static const String shoppingCart = "$imagePath/shopping_cart.png";
   static const String favoriteIcon = "$imagePath/favorite.png";
   static const String notFavoriteIcon = "$imagePath/not_favorite.png";
@@ -40,6 +42,7 @@ abstract class IconsAssets {
   static const String _icSearch = "$iconsPath/ic_search.png";
   static const String icDelete = "$iconsPath/ic_delete.png";
   static const String _icHeart = "$iconsPath/heart.png";
+  static const String icCheck = "$iconsPath/icon_check";
   static const String _icClickedHeart = "$iconsPath/clicked_heart.png";
 
   static String get icCategory => _icCategory;

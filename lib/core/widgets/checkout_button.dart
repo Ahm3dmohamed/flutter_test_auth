@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_auth/core/font_manager.dart';
 import 'package:flutter_test_auth/core/resources/color_manager.dart';
 import 'package:flutter_test_auth/core/resources/values_manager.dart';
+import 'package:flutter_test_auth/features/checkout/presentation/views/payment_details_view.dart';
 
+// ignore: must_be_immutable
 class CheckoutButton extends StatelessWidget {
-  const CheckoutButton({
-    super.key,
-    required this.total,
-    required Size size,
-  });
-
+  CheckoutButton(
+      {super.key,
+      required this.total,
+      required this.text,
+      required this.onPressed});
+  VoidCallback onPressed;
   final double total;
-
+  String text;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,22 +31,12 @@ class CheckoutButton extends StatelessWidget {
           ),
           elevation: 4,
         ),
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                'Total: \$${total.toStringAsFixed(2)}',
-                style: Styles.style18.copyWith(color: Colors.white),
-              ),
-              backgroundColor: ColorManager.primaryDark,
-            ),
-          );
-        },
+        onPressed: onPressed,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Checkout",
+              text,
               style: Styles.style22.copyWith(color: Colors.white),
             ),
             SizedBox(width: AppQuery.width(context, 2)),
